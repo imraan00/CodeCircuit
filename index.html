@@ -45,39 +45,32 @@
 </head>
 <body class="antialiased">
 
-<!-- Main Navigation -->
 <nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
     <div class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-2">
-            
-            <span class="font-orbitron text-xl hidden sm:inline">CodeCircuit</span>
-        </a>
-
-        <!-- Desktop Nav -->
+        <div class="flex items-center space-x-2">
+            <img id="nav-logo-index" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+            <a href="index.html" class="font-orbitron text-xl hidden sm:inline">CodeCircuit</a>
+        </div>
         <div class="hidden md:flex justify-center items-center space-x-2">
             <button class="nav-btn" data-target="home-page">Home</button>
             <a href="software.html" class="nav-btn">Software</a>
-            <button class="nav-btn" data-target="hardware-page">Hardware</button>
+            <a href="webdesign.html" class="nav-btn">Web Design</a>
             <a href="about.html" class="nav-btn">About Us</a>
         </div>
-        
-        <!-- Mobile Menu Button -->
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </div>
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4">
         <button class="block nav-btn text-left w-full" data-target="home-page">Home</button>
         <a href="software.html" class="block nav-btn text-left w-full">Software</a>
-        <button class="block nav-btn text-left w-full" data-target="hardware-page">Hardware</button>
+        <a href="webdesign.html" class="block nav-btn text-left w-full">Web Design</a>
         <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
     </div>
 </nav>
 
-<!-- Home Page -->
 <section id="home-page" class="page min-h-screen flex flex-col justify-center items-center p-10 text-center" style="background: radial-gradient(circle, #111827 0%, #0a0a1a 100%);">
     <div class="flex flex-col items-center">
         <img id="home-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-40 w-40 mb-6 rounded-full shadow-2xl shadow-cyan-500/20 cursor-pointer hover:opacity-90 transition-opacity">
@@ -85,7 +78,7 @@
             Code<span class="text-cyan-400">Circuit</span>
         </h1>
         <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
-            Your central hub for elite software and high-performance hardware. Powering your productivity, creativity, and security.
+            Your central hub for elite software, robust security, and professional web design solutions. Powering your productivity, creativity, and digital safety.
         </p>
         <div class="flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-4xl w-full">
             <div class="tech-card p-6 rounded-xl text-center w-full md:w-1/2">
@@ -97,28 +90,17 @@
             <a href="about.html" class="block w-full md:w-1/2">
                 <div class="tech-card p-6 rounded-xl text-center h-full">
                     <h2 class="text-2xl font-bold font-orbitron text-cyan-400 mb-3">About Us</h2>
-                    <p class="text-lg text-gray-400">To simplify technology by offering genuine software licenses, robust antivirus protection, and powerful hardware all in one place. Our goal is to equip you with reliable and efficient solutions, fast.</p>
+                    <p class="text-lg text-gray-400">To simplify technology by offering genuine software licenses, robust antivirus protection, and effective web design. Our goal is to equip you with reliable and efficient solutions, fast.</p>
                 </div>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Hardware Page -->
-<section id="hardware-page" class="page min-h-screen container mx-auto px-4 py-10 flex flex-col justify-center items-center">
-    <h2 class="text-4xl font-extrabold font-orbitron text-center mb-2 text-white">Hardware <span class="text-cyan-400">Technologies</span></h2>
-    <p class="text-lg text-gray-400 text-center mb-8">Powering your performance with cutting-edge tech.</p>
-    <div class="text-center mt-16">
-        <p class="text-3xl font-bold text-gray-500">Products coming soon!</p>
-    </div>
-</section>
-
-<!-- Logo Modal -->
 <div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
     <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
 </div>
 
-<!-- Footer -->
 <footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         <div class="mb-6 md:mb-0">
@@ -128,20 +110,18 @@
         
     </div>
     <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
-        &copy; 2025 CodeCircuit. All Rights Reserved.
+        &copy; 2025 CodeCircuit. All Rights Reserved. | <a href="terms.html" class="text-cyan-400 hover:underline">Ts & Cs Apply</a>
     </div>
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Navigation for the main page
     const pages = document.querySelectorAll('.page');
     const navBtns = document.querySelectorAll('.nav-btn');
 
@@ -150,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
             page.style.display = page.id === targetId ? 'block' : 'none';
         });
 
-        // Update active state for all nav buttons (desktop and mobile)
         navBtns.forEach(btn => {
             if (btn.tagName === 'BUTTON' && btn.dataset.target === targetId) {
                 btn.classList.add('active-nav');
@@ -159,22 +138,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Close mobile menu after selection
         if (!mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
         }
     }
-
-    const section = sessionStorage.getItem('showSection');
-    if (section) {
-        showPage(section);
-        sessionStorage.removeItem('showSection'); 
-    } else {
-        showPage('home-page');
-    }
+    
+    showPage('home-page');
 
     navBtns.forEach(btn => {
-        if (btn.dataset.target) {
+        // Only add event listener if it's a button with data-target
+        if (btn.tagName === 'BUTTON' && btn.dataset.target) {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 showPage(btn.dataset.target);
@@ -182,15 +155,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Logo Modal Logic
     const homeLogo = document.getElementById('home-logo');
+    const navLogo = document.getElementById('nav-logo-index');
     const logoModal = document.getElementById('logo-modal');
 
-    if (homeLogo && logoModal) {
-        homeLogo.addEventListener('click', () => {
-            logoModal.classList.remove('hidden');
-        });
+    function openModal() {
+        if (logoModal) logoModal.classList.remove('hidden');
+    }
 
+    if (homeLogo) homeLogo.addEventListener('click', openModal);
+    if (navLogo) navLogo.addEventListener('click', openModal);
+
+    if (logoModal) {
         logoModal.addEventListener('click', (e) => {
             if (e.target === logoModal) {
                 logoModal.classList.add('hidden');
@@ -201,3 +177,4 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
