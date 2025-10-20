@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Services - CodeCircuit</title>
+<link rel="icon" type="image/jpeg" href="Logo - Copy.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body { 
+        font-family: 'Rajdhani', sans-serif; 
+        background-color: #0a0a1a;
+        color: #e0e0e0;
+    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .nav-btn {
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border-bottom: 3px solid transparent;
+    }
+    .nav-btn:hover {
+        background-color: rgba(0, 198, 255, 0.1);
+        color: #00c6ff;
+    }
+    .service-card {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 198, 255, 0.2);
+        border-color: #00c6ff;
+    }
+    .modal-overlay {
+        transition: opacity 0.3s ease;
+    }
+</style>
+</head>
+<body class="antialiased">
+
+<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+            <a href="index.html" class="font-orbitron text-xl hidden sm:inline">CodeCircuit</a>
+        </div>
+
+        <div class="hidden md:flex justify-center items-center space-x-2">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="software.html" class="nav-btn">Software</a>
+            <a href="webdesign.html" class="nav-btn" style="background-color: rgba(0, 198, 255, 0.1); color: #00c6ff; border-bottom: 3px solid #00c6ff;">Web Design</a>
+            <a href="about.html" class="nav-btn">About Us</a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4">
+        <a href="index.html" class="block nav-btn text-left w-full">Home</a>
+        <a href="software.html" class="block nav-btn text-left w-full">Software</a>
+        <a href="webdesign.html" class="block nav-btn text-left w-full">Web Design</a>
+        <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
+    </div>
+</nav>
+
+<main class="min-h-screen container mx-auto px-4 py-10">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-5xl font-extrabold font-orbitron text-center mb-4 text-white">Our Web Design <span class="text-cyan-400">Services</span></h1>
+        <p class="text-xl text-gray-400 text-center mb-12">Crafting digital experiences that elevate your brand.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="service-card p-8 rounded-xl flex flex-col items-start">
+                <h2 class="text-3xl font-orbitron font-bold text-cyan-400 mb-4">Starter Brochure Website</h2>
+                <p class="text-2xl font-bold text-white mb-6">Cost: R2 000</p>
+                <p class="text-lg text-gray-300 mb-4 flex-grow">
+                    A professional 3-5 page website. Includes Home, About, Services, and Contact pages. Built on a user-friendly platform like WordPress or VSC. Mobile-responsive and Computer-responsive design. Limited content creation.
+                </p>
+            </div>
+
+            <div class="service-card p-8 rounded-xl flex flex-col items-start">
+                <h2 class="text-3xl font-orbitron font-bold text-cyan-400 mb-4">Small Business Package</h2>
+                <p class="text-2xl font-bold text-white mb-6">Cost: R8 000 - R10 000</p>
+                <p class="text-lg text-gray-300 mb-4 flex-grow">
+                    Everything in the Starter package plus full e-commerce functionality. Setup on Shopify or WordPress (WooCommerce). Includes payment gateway integration (PayFast, Yoco), shipping configuration, and setup for the first 10-20 products. Content creation assistance included.
+                </p>
+            </div>
+
+            <div class="service-card p-8 rounded-xl flex flex-col items-start">
+                <h2 class="text-3xl font-orbitron font-bold text-cyan-400 mb-4">Website Redesign</h2>
+                <p class="text-2xl font-bold text-white mb-6">Cost: R5 000 - R30 000+</p>
+                <p class="text-lg text-gray-300 mb-4 flex-grow">
+                    Taking a client's existing website and giving it a complete visual and functional overhaul. The price depends heavily on the size and complexity of the current site.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card p-8 rounded-xl max-w-2xl mx-auto text-center mb-12">
+            <h2 class="text-3xl font-orbitron font-bold text-cyan-400 mb-4">Website Care & Maintenance Plan</h2>
+            <p class="text-2xl font-bold text-white mb-6">Cost: R750 - R1 500 per month</p>
+            <p class="text-lg text-gray-300">
+                Ensure your website runs smoothly, securely, and stays up-to-date with our comprehensive maintenance plan.
+            </p>
+        </div>
+
+        <div class="mt-16 text-center">
+            <h2 class="text-4xl font-extrabold font-orbitron text-white mb-6">Ready to see our <span class="text-cyan-400">work</span>?</h2>
+            <a href="projects.html" class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-10 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                View Our Projects
+            </a>
+        </div>
+    </div>
+</main>
+
+<div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+    <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
+</div>
+
+<footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+            <h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4>
+            <p class="text-gray-400">Reach out for more information!</p>
+        </div>
+        <div class="space-y-3">
+            <p class="text-lg">
+                <span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" class="text-cyan-400 hover:underline">084 786 5336</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-400 hover:underline">mehtar.imraan@gmail.com</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/_codecircuit_/" target="_blank" class="text-cyan-400 hover:underline">@_codecircuit_</a>
+            </p>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
+        &copy; 2025 CodeCircuit. All Rights Reserved. | <a href="terms.html" class="text-cyan-400 hover:underline">Ts & Cs Apply</a>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Logo Modal Logic
+    const navLogo = document.getElementById('nav-logo');
+    const logoModal = document.getElementById('logo-modal');
+    if (navLogo && logoModal) {
+        navLogo.addEventListener('click', () => {
+            logoModal.classList.remove('hidden');
+        });
+        logoModal.addEventListener('click', (e) => {
+            if (e.target === logoModal) {
+                logoModal.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
