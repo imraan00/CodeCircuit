@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions - CodeCircuit</title>
+<link rel="icon" type="image/jpeg" href="Logo - Copy.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body { 
+        font-family: 'Rajdhani', sans-serif; 
+        background-color: #0a0a1a;
+        color: #e0e0e0;
+    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .nav-btn {
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border-bottom: 3px solid transparent;
+    }
+    .nav-btn:hover {
+        background-color: rgba(0, 198, 255, 0.1);
+        color: #00c6ff;
+    }
+    .terms-section {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+    }
+    .modal-overlay {
+        transition: opacity 0.3s ease;
+    }
+    h2 {
+        color: #00c6ff;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 700; /* font-bold */
+        margin-bottom: 1rem;
+    }
+    h3 {
+        color: #00c6ff;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.75rem; /* text-3xl */
+        font-weight: 600; /* font-semibold */
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+</style>
+</head>
+<body class="antialiased">
+
+<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+            <a href="index.html" class="font-orbitron text-xl hidden sm:inline">CodeCircuit</a>
+        </div>
+
+        <div class="hidden md:flex justify-center items-center space-x-2">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="software.html" class="nav-btn">Software</a>
+            <a href="webdesign.html" class="nav-btn">Web Design</a>
+            <a href="about.html" class="nav-btn">About Us</a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4">
+        <a href="index.html" class="block nav-btn text-left w-full">Home</a>
+        <a href="software.html" class="block nav-btn text-left w-full">Software</a>
+        <a href="webdesign.html" class="block nav-btn text-left w-full">Web Design</a>
+        <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
+    </div>
+</nav>
+
+<main class="min-h-screen container mx-auto px-4 py-10">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-extrabold font-orbitron text-center mb-6 text-white">Terms & Conditions <span class="text-cyan-400">Apply</span></h1>
+        <p class="text-xl text-gray-400 text-center mb-12">Please read these terms carefully before engaging with our services or purchasing our products.</p>
+
+        <div class="terms-section p-8 rounded-xl space-y-8 text-lg text-gray-300">
+            <section>
+                <h2>General Terms</h2>
+                <p>By accessing and using the CodeCircuit website and services, you agree to be bound by these Terms and Conditions. CodeCircuit reserves the right to update or modify these terms at any time without prior notice. Your continued use of the site or services after any such changes constitutes your acceptance of the new Terms and Conditions.</p>
+                <p>All prices listed on the website are subject to change without prior notice.</p>
+            </section>
+
+            <section>
+                <h3>Software & Subscriptions</h3>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li><span class="font-semibold">Microsoft Office Professional:</span> This is a life-time subscription. It is activated once and typically does not require annual renewal through CodeCircuit.</li>
+                    <li><span class="font-semibold">Adobe Creative Cloud:</span> This is a yearly subscription. It cancels automatically after one year. Clients are responsible for contacting CodeCircuit to initiate renewal for continued access.</li>
+                    <li><span class="font-semibold">Trend Micro Antivirus:</span> This is a yearly subscription. It cancels automatically after one year. Clients are responsible for contacting CodeCircuit to initiate renewal for continued protection.</li>
+                    <li><span class="font-semibold">Activation & Support:</span> CodeCircuit provides genuine licenses. Activation support is offered; ongoing technical support for the software itself falls under the respective software vendor's policies, however we may be of assisstance in certain aspects.</li>
+                    <li><span class="font-semibold">Refunds:</span> Due to the nature of software licenses, all sales are generally final once the license key has been delivered or activated. Exceptions are at the sole discretion of CodeCircuit.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Web Design Services</h3>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                    <li><span class="font-semibold">Client Responsibilities:</span> For all web design packages, particularly those involving e-commerce or custom functionality, the client is solely responsible for providing:
+                        <ul class="list-circle list-inside ml-6 mt-1 space-y-1">
+                            <li>Their own backend server infrastructure.</li>
+                            <li>A fully provisioned database (if required for the project).</li>
+                            <li>Activated accounts for all chosen payment gateways (e.g., PayFast, Yoco).</li>
+                            <li>All necessary API credentials, "bridges," or third-party service access required for integration.</li>
+                        </ul>
+                        CodeCircuit's role is limited to the design, development, and integration of the front-end and specified platform (e.g., Shopify, WordPress/WooCommerce) using the resources and credentials provided by the client.
+                    </li>
+                    <li><span class="font-semibold">Exclusions:</span> All quoted web design packages explicitly exclude domain registration and ongoing hosting costs. These are the client's responsibility.</li>
+                    <li><span class="font-semibold">Payment Terms:</span> A 50% upfront payment is required to commence any web design project. The remaining 50% is due upon project completion and client approval, prior to full deployment or handover.</li>
+                    <li><span class="font-semibold">Project Scope & Revisions:</span> Any changes or additions to the project scope beyond the initial agreement may incur additional charges and affect the project timeline. A reasonable number of revisions are included in each package; excessive revisions may be billed additionally.</li>
+                    <li><span class="font-semibold">Content Responsibility:</span> The client is responsible for providing all website content (text, images, videos, logos, etc.) unless content creation services are explicitly part of the agreed-upon package. Delays in content submission may affect project timelines.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Limitation of Liability</h3>
+                <p>CodeCircuit shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use our services or products, including but not limited to loss of data, profits, or business interruption.</p>
+                <p>We strive to provide reliable and secure services, but do not guarantee that our website or services will be uninterrupted, error-free, or free of viruses or other harmful components. You use our services at your own discretion and risk.</p>
+            </section>
+
+            <section>
+                <h3>Intellectual Property</h3>
+                <p>All content on the CodeCircuit website, including text, graphics, logos, images, and software, is the property of CodeCircuit or its content suppliers and protected by international copyright laws.</p>
+                <p>Upon final payment for web design services, the client will own the intellectual property rights to the final website design and custom code developed specifically for them. CodeCircuit may retain rights to reusable code modules or design templates.</p>
+            </section>
+
+            <section>
+                <h3>Governing Law</h3>
+                <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of South Africa, without regard to its conflict of law provisions.</p>
+            </section>
+
+            <section>
+                <h3>Contact Us</h3>
+                <p>For any questions regarding these Terms & Conditions, please contact us at:</p>
+                <p><span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" target="_blank" class="text-cyan-300 hover:underline">084 786 5336</a></p>
+                <p><span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-300 hover:underline">mehtar.imraan@gmail.com</a></p>
+            </section>
+        </div>
+    </div>
+</main>
+
+<div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+    <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
+</div>
+
+<footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+            <h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4>
+            <p class="text-gray-400">Reach out for more information!</p>
+        </div>
+        
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
+        &copy; 2025 CodeCircuit. All Rights Reserved. | <a href="terms.html" class="text-cyan-400 hover:underline">Ts & Cs Apply</a>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const navLogo = document.getElementById('nav-logo');
+    const logoModal = document.getElementById('logo-modal');
+
+    function openModal() {
+        if (logoModal) logoModal.classList.remove('hidden');
+    }
+
+    if (navLogo) navLogo.addEventListener('click', openModal);
+
+    if (logoModal) {
+        logoModal.addEventListener('click', (e) => {
+            if (e.target === logoModal) {
+                logoModal.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
