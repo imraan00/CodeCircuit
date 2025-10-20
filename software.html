@@ -65,41 +65,36 @@
 </head>
 <body class="antialiased">
 
-<!-- Software Navigation -->
 <nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex items-center space-x-2">
             <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
             <a href="index.html" class="font-orbitron text-xl hidden sm:inline">CodeCircuit</a>
         </div>
-
-        <!-- Desktop Nav -->
         <div class="hidden md:flex justify-center items-center space-x-2">
             <a href="index.html" class="nav-btn">Home</a>
             <button class="nav-btn" data-target="microsoft-page">Microsoft Office</button>
             <button class="nav-btn" data-target="adobe-page">Adobe Cloud</button>
             <button class="nav-btn" data-target="trend-page">Trend Antivirus</button>
+            <a href="webdesign.html" class="nav-btn">Web Design</a>
             <a href="about.html" class="nav-btn">About Us</a>
         </div>
-        
-        <!-- Mobile Menu Button -->
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </div>
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden mt-4">
         <a href="index.html" class="block nav-btn text-left w-full">Home</a>
         <button class="block nav-btn text-left w-full" data-target="microsoft-page">Microsoft Office</button>
         <button class="block nav-btn text-left w-full" data-target="adobe-page">Adobe Cloud</button>
         <button class="block nav-btn text-left w-full" data-target="trend-page">Trend Antivirus</button>
+        <a href="webdesign.html" class="block nav-btn text-left w-full">Web Design</a>
         <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
     </div>
 </nav>
 
-<!-- Microsoft Office Page -->
 <section id="microsoft-page" class="page min-h-screen container mx-auto px-4 py-10">
     <h2 class="text-4xl font-extrabold font-orbitron text-center mb-2 text-white">Microsoft Office <span class="text-cyan-400">Professional</span></h2>
     <p class="text-lg text-gray-400 text-center mb-8">The essential suite for productivity.</p>
@@ -114,7 +109,6 @@
     </div>
 </section>
 
-<!-- Adobe Page -->
 <section id="adobe-page" class="page min-h-screen container mx-auto px-4 py-10">
     <h2 class="text-4xl font-extrabold font-orbitron text-center mb-2 text-white">Adobe Creative <span class="text-cyan-400">Cloud</span></h2>
     <p class="text-lg text-gray-400 text-center mb-8">The ultimate toolkit for creatives.</p>
@@ -129,7 +123,6 @@
     </div>
 </section>
 
-<!-- Trend Antivirus Page -->
 <section id="trend-page" class="page min-h-screen container mx-auto px-4 py-10">
     <h2 class="text-4xl font-extrabold font-orbitron text-red-500 text-center mb-2">Trend Micro Antivirus</h2>
     <p class="text-lg text-gray-400 text-center mb-8">Maximum Security for Your Digital World.</p>
@@ -141,105 +134,54 @@
     </div>
     <div class="max-w-4xl mx-auto space-y-4 text-gray-300">
         <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">What is Trend Micro Antivirus?</button>
-        <div class="collapsible-content p-4 rounded-lg">
-            <p>Trend Micro Antivirus is a computer security program that protects your devices from viruses, hackers, and other online threats.</p>
-        </div>
+        <div class="collapsible-content p-4 rounded-lg"><p>Trend Micro Antivirus is a computer security program that protects your devices from viruses, hackers, and other online threats.</p></div>
         <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Why do you need it?</button>
-        <div class="collapsible-content p-5 rounded-lg">
-            <p>Without antivirus protection, your computer is vulnerable to viruses, spyware, ransomware, and phishing websites.</p>
-        </div>
+        <div class="collapsible-content p-5 rounded-lg"><p>Without antivirus protection, your computer is vulnerable to viruses, spyware, ransomware, and phishing websites.</p></div>
         <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Core Protection Features</button>
-        <div class="collapsible-content p-5 rounded-lg">
-            <ul class="list-disc list-inside space-y-1">
-                <li>Real-Time Protection</li>
-                <li>Web Protection</li>
-                <li>Email Protection</li>
-                <li>Ransomware Protection</li>
-                <li>System Optimization</li>
-            </ul>
-        </div>
+        <div class="collapsible-content p-5 rounded-lg"><ul class="list-disc list-inside space-y-1"><li>Real-Time Protection</li><li>Web Protection</li><li>Email Protection</li><li>Ransomware Protection</li><li>System Optimization</li></ul></div>
         <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Benefits For You</button>
-        <div class="collapsible-content p-5 rounded-lg">
-            <ul class="list-disc list-inside space-y-1">
-                <li>Peace of mind while browsing online.</li>
-                <li>Protection for your entire family's devices.</li>
-                <li>Better system performance without slowdowns.</li>
-                <li>Always updated against the latest threats.</li>
-            </ul>
-        </div>
+        <div class="collapsible-content p-5 rounded-lg"><ul class="list-disc list-inside space-y-1"><li>Peace of mind while browsing online.</li><li>Protection for your entire family's devices.</li><li>Better system performance without slowdowns.</li><li>Always updated against the latest threats.</li></ul></div>
     </div>
 </section>
 
-<!-- Logo Modal -->
 <div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
     <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
 </div>
 
-<!-- Footer -->
 <footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-        <div class="mb-6 md:mb-0">
-            <h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4>
-            <p class="text-gray-400">Reach out for more information!</p>
-        </div>
-        <div class="space-y-3">
-            <p class="text-lg">
-                <span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" class="text-cyan-400 hover:underline">084 786 5336</a>
-            </p>
-            <p class="text-lg">
-                <span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-400 hover:underline">mehtar.imraan@gmail.com</a>
-            </p>
-            <p class="text-lg">
-                <span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/_codecircuit_/" target="_blank" class="text-cyan-400 hover:underline">@_codecircuit_</a>
-            </p>
-        </div>
+        <div class="mb-6 md:mb-0"><h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4><p class="text-gray-400">Reach out for more information!</p></div>
+        <div class="space-y-3"><p class="text-lg"><span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" class="text-cyan-400 hover:underline">084 786 5336</a></p><p class="text-lg"><span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-400 hover:underline">mehtar.imraan@gmail.com</a></p><p class="text-lg"><span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/_codecircuit_/" target="_blank" class="text-cyan-400 hover:underline">@_codecircuit_</a></p></div>
     </div>
+    
     <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
-        &copy; 2025 CodeCircuit. All Rights Reserved.
+        &copy; 2025 CodeCircuit. All Rights Reserved. | <a href="terms.html" class="text-cyan-400 hover:underline">Ts & Cs Apply</a>
     </div>
 </footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+    mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
     const pages = document.querySelectorAll('.page');
     const navBtns = document.querySelectorAll('.nav-btn');
 
     function showPage(targetId) {
-        pages.forEach(page => {
-            page.style.display = page.id === targetId ? 'block' : 'none';
-        });
+        pages.forEach(page => { page.style.display = page.id === targetId ? 'block' : 'none'; });
         navBtns.forEach(btn => {
-            if (btn.dataset.target === targetId) {
-                btn.classList.add('active-nav');
-            } else {
-                btn.classList.remove('active-nav');
-            }
+            if (btn.dataset.target === targetId) { btn.classList.add('active-nav'); } else { btn.classList.remove('active-nav'); }
         });
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-        }
+        if (!mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); }
     }
 
     navBtns.forEach(btn => {
-        if (btn.dataset.target) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showPage(btn.dataset.target);
-            });
-        }
+        if (btn.dataset.target) { btn.addEventListener('click', (e) => { e.preventDefault(); showPage(btn.dataset.target); }); }
     });
-
     showPage('microsoft-page');
 
-    // --- Data for Apps ---
     const msAppsData = { word: { name: "Microsoft Word", logo: "Word.png", description: "A program used for typing and creating professional documents.", features:["Write letters, resumes, reports, and essays","Add pictures, tables, and designs","Correct spelling and grammar automatically"], shape: "rounded-full" }, excel: { name: "Microsoft Excel", logo: "Excel.png", description: "A spreadsheet program used to organize numbers and data.", features:["Create budgets, invoices, and reports","Perform automatic calculations","Use charts to visualize data"], shape: "rounded-full" }, powerpoint: { name: "Microsoft PowerPoint", logo: "Powerpoint.png", description: "Helps you make impactful slideshow presentations.", features:["Create professional slideshows","Add transitions and effects","Use pre-made templates"], shape: "rounded-full" }, access: { name: "Microsoft Access", logo: "Access.png", description: "Used to build and manage complex databases.", features:["Store and organize large amounts of data","Search and filter information easily","Create custom forms and reports"], shape: "rounded-full" }, outlook: { name: "Microsoft Outlook", logo: "Outlook.png", description: "An email and calendar app to manage communication.", features:["Send and receive emails","Schedule appointments and meetings","Manage contacts and tasks"], shape: "rounded-full" } };
     const adobeAppsData = { photoshop: { name:"Adobe Photoshop", logo:"Photoshop.png", description:"Turn any photo into a masterpiece.", features:["Fix, transform, and enhance images","Retouch portraits & remove backgrounds","Design stunning digital art"], shape: "rounded-2xl" }, illustrator: { name:"Adobe Illustrator", logo:"Ai.png", description:"Design vector art that stays crystal clear at any size.", features:["Design logos, icons, and infographics","Precise drawing tools for professional artwork","Ideal for branding, print, and web"], shape: "rounded-2xl" }, aftereffects: { name:"Adobe After Effects", logo:"Ae.png", description:"If you can imagine it moving, After Effects can make it happen.", features:["Create cinematic animations and motion graphics","Design dynamic text and transitions","Produce visual effects for social media and film"], shape: "rounded-2xl" }, premiere: { name:"Adobe Premiere Pro", logo:"Premiere Pro.png", description:"From raw clips to wow moments — bring your story to life.", features:["Cut, arrange, and refine video footage","Adjust colors and audio professionally","Add transitions and effects"], shape: "rounded-2xl" }, indesign: { name:"Adobe InDesign", logo:"Id.png", description:"Your words deserve a beautiful home — InDesign builds it.", features:["Design magazines, brochures, and books","Utilize powerful typography tools","Export print-ready or digital formats"], shape: "rounded-2xl" } };
     
@@ -259,11 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const gridContainer = document.getElementById(`${pagePrefix}-container`);
                 if (gridContainer) gridContainer.style.display = 'none';
                 detailContainer.style.display = 'block';
-                detailContent.innerHTML = `<img src="${app.logo}" alt="${app.name} Logo" class="w-32 h-32 mb-6 ${app.shape}">
-                    <h2 class="text-4xl font-extrabold font-orbitron text-cyan-400 mb-4">${app.name}</h2>
-                    <p class="text-lg leading-relaxed text-gray-400 mb-8 max-w-3xl text-center">${app.description}</p>
-                    <h3 class="text-2xl font-bold text-white mb-4">Key Features:</h3>
-                    <ul class="list-disc list-inside text-left text-gray-300 space-y-2 text-lg max-w-2xl">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+                detailContent.innerHTML = `<img src="${app.logo}" alt="${app.name} Logo" class="w-32 h-32 mb-6 ${app.shape}"><h2 class="text-4xl font-extrabold font-orbitron text-cyan-400 mb-4">${app.name}</h2><p class="text-lg leading-relaxed text-gray-400 mb-8 max-w-3xl text-center">${app.description}</p><h3 class="text-2xl font-bold text-white mb-4">Key Features:</h3><ul class="list-disc list-inside text-left text-gray-300 space-y-2 text-lg max-w-2xl">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
             });
             return card;
         };
@@ -292,25 +230,16 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener('click', () => {
             const content = btn.nextElementSibling;
             const isVisible = content.style.display === 'block';
-            document.querySelectorAll('.collapsible-content').forEach(c => {
-                if (c !== content) c.style.display = 'none';
-            });
+            document.querySelectorAll('.collapsible-content').forEach(c => { if (c !== content) c.style.display = 'none'; });
             content.style.display = isVisible ? 'none' : 'block';
         });
     });
 
-    // Logo Modal Logic
     const navLogo = document.getElementById('nav-logo');
     const logoModal = document.getElementById('logo-modal');
     if (navLogo && logoModal) {
-        navLogo.addEventListener('click', () => {
-            logoModal.classList.remove('hidden');
-        });
-        logoModal.addEventListener('click', (e) => {
-            if (e.target === logoModal) {
-                logoModal.classList.add('hidden');
-            }
-        });
+        navLogo.addEventListener('click', () => { logoModal.classList.remove('hidden'); });
+        logoModal.addEventListener('click', (e) => { if (e.target === logoModal) { logoModal.classList.add('hidden'); } });
     }
 });
 </script>
