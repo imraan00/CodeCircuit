@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects - CodeCircuit Web Design</title>
+<link rel="icon" type="image/jpeg" href="Logo - Copy.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body { 
+        font-family: 'Rajdhani', sans-serif; 
+        background-color: #0a0a1a;
+        color: #e0e0e0;
+    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .nav-btn {
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border-bottom: 3px solid transparent;
+    }
+    .nav-btn:hover {
+        background-color: rgba(0, 198, 255, 0.1);
+        color: #00c6ff;
+    }
+    .project-card {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden; /* Ensures image doesn't overflow rounded corners */
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 198, 255, 0.2);
+        border-color: #00c6ff;
+    }
+    .project-card img {
+        transition: transform 0.3s ease;
+    }
+    .project-card:hover img {
+        transform: scale(1.05);
+    }
+    .modal-overlay {
+        transition: opacity 0.3s ease;
+    }
+</style>
+</head>
+<body class="antialiased">
+
+<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+            <a href="index.html" class="font-orbitron text-xl hidden sm:inline">CodeCircuit</a>
+        </div>
+
+        <div class="hidden md:flex justify-center items-center space-x-2">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="software.html" class="nav-btn">Software</a>
+            <a href="webdesign.html" class="nav-btn">Web Design</a>
+            <a href="about.html" class="nav-btn">About Us</a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4">
+        <a href="index.html" class="block nav-btn text-left w-full">Home</a>
+        <a href="software.html" class="block nav-btn text-left w-full">Software</a>
+        <a href="webdesign.html" class="block nav-btn text-left w-full">Web Design</a>
+        <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
+    </div>
+</nav>
+
+<main class="min-h-screen container mx-auto px-4 py-10">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-5xl font-extrabold font-orbitron text-center mb-4 text-white">Our <span class="text-cyan-400">Web Projects</span></h1>
+        <p class="text-xl text-gray-400 text-center mb-12">Showcasing our recent work and design expertise.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="project-card rounded-xl shadow-lg lg:col-span-1"> <img src="ECTN.jpg" alt="East Coast Trade Network Website" class="w-full h-48 object-cover rounded-t-xl mb-4">
+                <div class="p-6">
+                    <h2 class="text-3xl font-orbitron font-bold text-cyan-400 mb-2">East Coast Trade Network</h2>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Designed and developed a comprehensive online presence for East Coast Trade Network. This project involved creating a user-friendly and responsive website to showcase their services and connect with their audience.
+                    </p>
+                    <a href="https://eastcoasttradenetwork.com/" target="_blank" class="text-cyan-300 hover:text-cyan-500 hover:underline font-semibold flex items-center">
+                        View Site <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0l-6 6"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+    </div>
+</main>
+
+<div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+    <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
+</div>
+
+<footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+            <h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4>
+            <p class="text-gray-400">Reach out for more information!</p>
+        </div>
+        <div class="space-y-3">
+            <p class="text-lg">
+                <span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" class="text-cyan-400 hover:underline">084 786 5336</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-400 hover:underline">mehtar.imraan@gmail.com</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/_codecircuit_/" target="_blank" class="text-cyan-400 hover:underline">@_codecircuit_</a>
+            </p>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
+        &copy; 2025 CodeCircuit. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Logo Modal Logic
+    const navLogo = document.getElementById('nav-logo');
+    const logoModal = document.getElementById('logo-modal');
+    if (navLogo && logoModal) {
+        navLogo.addEventListener('click', () => {
+            logoModal.classList.remove('hidden');
+        });
+        logoModal.addEventListener('click', (e) => {
+            if (e.target === logoModal) {
+                logoModal.classList.add('hidden');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
