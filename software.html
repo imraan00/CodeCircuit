@@ -66,13 +66,37 @@
 <body class="antialiased">
 
 <!-- Software Navigation -->
-<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-6 flex justify-center items-center space-x-2 md:space-x-4 sticky top-0 z-50 border-b border-gray-700">
-    <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full mr-4 hidden md:block cursor-pointer">
-    <a href="index.html" class="nav-btn">Home</a>
-    <button class="nav-btn" data-target="microsoft-page">Microsoft Office</button>
-    <button class="nav-btn" data-target="adobe-page">Adobe Cloud</button>
-    <button class="nav-btn" data-target="trend-page">Trend Antivirus</button>
-    <a href="about.html" class="nav-btn">About Us</a>
+<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-4 sticky top-0 z-50 border-b border-gray-700">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+            <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full cursor-pointer hover:opacity-90 transition-opacity">
+            <span class="font-orbitron text-xl hidden sm:inline">CodeCircuit</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex justify-center items-center space-x-2">
+            <a href="index.html" class="nav-btn">Home</a>
+            <button class="nav-btn" data-target="microsoft-page">Microsoft Office</button>
+            <button class="nav-btn" data-target="adobe-page">Adobe Cloud</button>
+            <button class="nav-btn" data-target="trend-page">Trend Antivirus</button>
+            <a href="about.html" class="nav-btn">About Us</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4">
+        <a href="index.html" class="block nav-btn text-left w-full">Home</a>
+        <button class="block nav-btn text-left w-full" data-target="microsoft-page">Microsoft Office</button>
+        <button class="block nav-btn text-left w-full" data-target="adobe-page">Adobe Cloud</button>
+        <button class="block nav-btn text-left w-full" data-target="trend-page">Trend Antivirus</button>
+        <a href="about.html" class="block nav-btn text-left w-full">About Us</a>
+    </div>
 </nav>
 
 <!-- Microsoft Office Page -->
@@ -176,7 +200,14 @@
 </footer>
 
 <script>
-    // Navigation for the software page
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
     const pages = document.querySelectorAll('.page');
     const navBtns = document.querySelectorAll('.nav-btn');
 
@@ -192,6 +223,9 @@
             }
         });
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+        }
     }
 
     navBtns.forEach(btn => {
@@ -203,27 +237,12 @@
         }
     });
 
-    // Show the Microsoft page by default on the software page
     showPage('microsoft-page');
 
     // --- Data for Apps ---
-    const msAppsData = {
-        word: { name: "Microsoft Word", logo: "Word.png", description: "A program used for typing and creating professional documents.", features:["Write letters, resumes, reports, and essays","Add pictures, tables, and designs","Correct spelling and grammar automatically"], shape: "rounded-full" },
-        excel: { name: "Microsoft Excel", logo: "Excel.png", description: "A spreadsheet program used to organize numbers and data.", features:["Create budgets, invoices, and reports","Perform automatic calculations","Use charts to visualize data"], shape: "rounded-full" },
-        powerpoint: { name: "Microsoft PowerPoint", logo: "Powerpoint.png", description: "Helps you make impactful slideshow presentations.", features:["Create professional slideshows","Add transitions and effects","Use pre-made templates"], shape: "rounded-full" },
-        access: { name: "Microsoft Access", logo: "Access.png", description: "Used to build and manage complex databases.", features:["Store and organize large amounts of data","Search and filter information easily","Create custom forms and reports"], shape: "rounded-full" },
-        outlook: { name: "Microsoft Outlook", logo: "Outlook.png", description: "An email and calendar app to manage communication.", features:["Send and receive emails","Schedule appointments and meetings","Manage contacts and tasks"], shape: "rounded-full" }
-    };
-
-    const adobeAppsData = {
-        photoshop: { name:"Adobe Photoshop", logo:"Photoshop.png", description:"Turn any photo into a masterpiece.", features:["Fix, transform, and enhance images","Retouch portraits & remove backgrounds","Design stunning digital art"], shape: "rounded-2xl" },
-        illustrator: { name:"Adobe Illustrator", logo:"Ai.png", description:"Design vector art that stays crystal clear at any size.", features:["Design logos, icons, and infographics","Precise drawing tools for professional artwork","Ideal for branding, print, and web"], shape: "rounded-2xl" },
-        aftereffects: { name:"Adobe After Effects", logo:"Ae.png", description:"If you can imagine it moving, After Effects can make it happen.", features:["Create cinematic animations and motion graphics","Design dynamic text and transitions","Produce visual effects for social media and film"], shape: "rounded-2xl" },
-        premiere: { name:"Adobe Premiere Pro", logo:"Premiere Pro.png", description:"From raw clips to wow moments — bring your story to life.", features:["Cut, arrange, and refine video footage","Adjust colors and audio professionally","Add transitions and effects"], shape: "rounded-2xl" },
-        indesign: { name:"Adobe InDesign", logo:"Id.png", description:"Your words deserve a beautiful home — InDesign builds it.", features:["Design magazines, brochures, and books","Utilize powerful typography tools","Export print-ready or digital formats"], shape: "rounded-2xl" }
-    };
+    const msAppsData = { word: { name: "Microsoft Word", logo: "Word.png", description: "A program used for typing and creating professional documents.", features:["Write letters, resumes, reports, and essays","Add pictures, tables, and designs","Correct spelling and grammar automatically"], shape: "rounded-full" }, excel: { name: "Microsoft Excel", logo: "Excel.png", description: "A spreadsheet program used to organize numbers and data.", features:["Create budgets, invoices, and reports","Perform automatic calculations","Use charts to visualize data"], shape: "rounded-full" }, powerpoint: { name: "Microsoft PowerPoint", logo: "Powerpoint.png", description: "Helps you make impactful slideshow presentations.", features:["Create professional slideshows","Add transitions and effects","Use pre-made templates"], shape: "rounded-full" }, access: { name: "Microsoft Access", logo: "Access.png", description: "Used to build and manage complex databases.", features:["Store and organize large amounts of data","Search and filter information easily","Create custom forms and reports"], shape: "rounded-full" }, outlook: { name: "Microsoft Outlook", logo: "Outlook.png", description: "An email and calendar app to manage communication.", features:["Send and receive emails","Schedule appointments and meetings","Manage contacts and tasks"], shape: "rounded-full" } };
+    const adobeAppsData = { photoshop: { name:"Adobe Photoshop", logo:"Photoshop.png", description:"Turn any photo into a masterpiece.", features:["Fix, transform, and enhance images","Retouch portraits & remove backgrounds","Design stunning digital art"], shape: "rounded-2xl" }, illustrator: { name:"Adobe Illustrator", logo:"Ai.png", description:"Design vector art that stays crystal clear at any size.", features:["Design logos, icons, and infographics","Precise drawing tools for professional artwork","Ideal for branding, print, and web"], shape: "rounded-2xl" }, aftereffects: { name:"Adobe After Effects", logo:"Ae.png", description:"If you can imagine it moving, After Effects can make it happen.", features:["Create cinematic animations and motion graphics","Design dynamic text and transitions","Produce visual effects for social media and film"], shape: "rounded-2xl" }, premiere: { name:"Adobe Premiere Pro", logo:"Premiere Pro.png", description:"From raw clips to wow moments — bring your story to life.", features:["Cut, arrange, and refine video footage","Adjust colors and audio professionally","Add transitions and effects"], shape: "rounded-2xl" }, indesign: { name:"Adobe InDesign", logo:"Id.png", description:"Your words deserve a beautiful home — InDesign builds it.", features:["Design magazines, brochures, and books","Utilize powerful typography tools","Export print-ready or digital formats"], shape: "rounded-2xl" } };
     
-    // --- Function to create App Grids and Details ---
     function setupAppPage(pagePrefix, appData) {
         const detailContainer = document.getElementById(`${pagePrefix}-detail-container`);
         const detailContent = document.getElementById(`${pagePrefix}-detail-content`);
@@ -233,12 +252,9 @@
         const createCard = (app, isBottomRow = false) => {
             const card = document.createElement('div');
             let classList = "app-card tech-card p-6 rounded-xl flex flex-col items-center text-center cursor-pointer";
-            if (isBottomRow) {
-                classList += " w-full md:w-auto lg:w-[32%]"; 
-            }
+            if (isBottomRow) { classList += " w-full md:w-auto lg:w-[32%]"; }
             card.className = classList;
             card.innerHTML = `<img src="${app.logo}" alt="${app.name}" class="w-24 h-24 mb-4 ${app.shape}"><h3 class="text-2xl font-bold text-white">${app.name}</h3>`;
-            
             card.addEventListener('click', () => {
                 const gridContainer = document.getElementById(`${pagePrefix}-container`);
                 if (gridContainer) gridContainer.style.display = 'none';
@@ -265,16 +281,12 @@
             appKeys.slice(3).forEach(key => gridBottom.appendChild(createCard(appData[key], true)));
         }
         
-        if (backBtn) {
-            backBtn.addEventListener('click', backHandler);
-        }
+        if (backBtn) { backBtn.addEventListener('click', backHandler); }
     }
 
-    // Initialize the app pages
     setupAppPage('ms', msAppsData);
     setupAppPage('adobe', adobeAppsData);
 
-    // Trend Collapsible Sections
     const trendBtns = document.querySelectorAll('.trend-toggle');
     trendBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -290,18 +302,18 @@
     // Logo Modal Logic
     const navLogo = document.getElementById('nav-logo');
     const logoModal = document.getElementById('logo-modal');
-
     if (navLogo && logoModal) {
         navLogo.addEventListener('click', () => {
             logoModal.classList.remove('hidden');
         });
-
         logoModal.addEventListener('click', (e) => {
             if (e.target === logoModal) {
                 logoModal.classList.add('hidden');
             }
         });
     }
+});
 </script>
 </body>
 </html>
+
