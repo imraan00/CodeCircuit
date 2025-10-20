@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software - CodeCircuit</title>
+<link rel="icon" type="image/jpeg" href="Logo - Copy.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body { 
+        font-family: 'Rajdhani', sans-serif; 
+        background-color: #0a0a1a;
+        color: #e0e0e0;
+    }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    .page { display: none; }
+    .active-nav { 
+        background-color: rgba(0, 198, 255, 0.1);
+        color: #00c6ff;
+        border-bottom: 3px solid #00c6ff;
+    }
+    .nav-btn {
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border-bottom: 3px solid transparent;
+    }
+    .collapsible-content { display: none; }
+    .tech-card {
+        background-color: rgba(30, 41, 59, 0.5);
+        border: 1px solid #334155;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tech-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 198, 255, 0.2);
+        border-color: #00c6ff;
+    }
+    .app-card {
+        background-color: #1e293b;
+        border: 1px solid #334155;
+    }
+    .app-detail-page {
+        background-color: #111827;
+        border: 1px solid #334155;
+    }
+    .trend-toggle {
+        background-color: #1e293b;
+        color: #e0e0e0;
+    }
+    .trend-toggle:hover {
+        background-color: #334155;
+    }
+    .collapsible-content {
+        background-color: #111827;
+        color: #cbd5e1;
+    }
+    .modal-overlay {
+        transition: opacity 0.3s ease;
+    }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Software Navigation -->
+<nav class="bg-gray-900/70 backdrop-blur-md text-white shadow-lg py-3 px-6 flex justify-center items-center space-x-2 md:space-x-4 sticky top-0 z-50 border-b border-gray-700">
+    <img id="nav-logo" src="Logo.png" alt="CodeCircuit Logo" class="h-10 w-10 rounded-full mr-4 hidden md:block cursor-pointer">
+    <a href="index.html" class="nav-btn">Home</a>
+    <button class="nav-btn" data-target="microsoft-page">Microsoft Office</button>
+    <button class="nav-btn" data-target="adobe-page">Adobe Cloud</button>
+    <button class="nav-btn" data-target="trend-page">Trend Antivirus</button>
+    <a href="about.html" class="nav-btn">About Us</a>
+</nav>
+
+<!-- Microsoft Office Page -->
+<section id="microsoft-page" class="page min-h-screen container mx-auto px-4 py-10">
+    <h2 class="text-4xl font-extrabold font-orbitron text-center mb-2 text-white">Microsoft Office <span class="text-cyan-400">Professional</span></h2>
+    <p class="text-lg text-gray-400 text-center mb-8">The essential suite for productivity.</p>
+    <p class="text-lg text-gray-400 text-center mb-8">Lifetime subscription, including:</p>
+    <div id="ms-container" class="space-y-8">
+        <div id="ms-grid-top" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div id="ms-grid-bottom" class="flex flex-wrap justify-center gap-8"></div>
+    </div>
+    <div id="ms-detail-container" class="app-detail-page p-8 rounded-xl shadow-lg mt-10" style="display:none;">
+        <button id="ms-back-btn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-full mb-6">Back</button>
+        <div id="ms-detail-content" class="flex flex-col items-center text-center"></div>
+    </div>
+</section>
+
+<!-- Adobe Page -->
+<section id="adobe-page" class="page min-h-screen container mx-auto px-4 py-10">
+    <h2 class="text-4xl font-extrabold font-orbitron text-center mb-2 text-white">Adobe Creative <span class="text-cyan-400">Cloud</span></h2>
+    <p class="text-lg text-gray-400 text-center mb-8">The ultimate toolkit for creatives.</p>
+    <p class="text-lg text-gray-400 text-center mb-8">Yearly subscription, including:</p>
+    <div id="adobe-container" class="space-y-8">
+        <div id="adobe-grid-top" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div id="adobe-grid-bottom" class="flex flex-wrap justify-center gap-8"></div>
+    </div>
+    <div id="adobe-detail-container" class="app-detail-page p-8 rounded-xl shadow-lg mt-10" style="display:none;">
+        <button id="adobe-back-btn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-full mb-6">Back</button>
+        <div id="adobe-detail-content" class="flex flex-col items-center text-center"></div>
+    </div>
+</section>
+
+<!-- Trend Antivirus Page -->
+<section id="trend-page" class="page min-h-screen container mx-auto px-4 py-10">
+    <h2 class="text-4xl font-extrabold font-orbitron text-red-500 text-center mb-2">Trend Micro Antivirus</h2>
+    <p class="text-lg text-gray-400 text-center mb-8">Maximum Security for Your Digital World.</p>
+    <div class="flex justify-center mb-6">
+        <img src="Trend.jpg" alt="Trend Micro Logo" class="rounded-lg" width="300">
+    </div>
+    <div>
+        <p class="text-lg text-gray-400 text-center mb-8">Yearly subscription.</p>
+    </div>
+    <div class="max-w-4xl mx-auto space-y-4 text-gray-300">
+        <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">What is Trend Micro Antivirus?</button>
+        <div class="collapsible-content p-4 rounded-lg">
+            <p>Trend Micro Antivirus is a computer security program that protects your devices from viruses, hackers, and other online threats.</p>
+        </div>
+        <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Why do you need it?</button>
+        <div class="collapsible-content p-5 rounded-lg">
+            <p>Without antivirus protection, your computer is vulnerable to viruses, spyware, ransomware, and phishing websites.</p>
+        </div>
+        <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Core Protection Features</button>
+        <div class="collapsible-content p-5 rounded-lg">
+            <ul class="list-disc list-inside space-y-1">
+                <li>Real-Time Protection</li>
+                <li>Web Protection</li>
+                <li>Email Protection</li>
+                <li>Ransomware Protection</li>
+                <li>System Optimization</li>
+            </ul>
+        </div>
+        <button class="trend-toggle w-full text-left py-3 px-5 rounded-lg font-semibold">Benefits For You</button>
+        <div class="collapsible-content p-5 rounded-lg">
+            <ul class="list-disc list-inside space-y-1">
+                <li>Peace of mind while browsing online.</li>
+                <li>Protection for your entire family's devices.</li>
+                <li>Better system performance without slowdowns.</li>
+                <li>Always updated against the latest threats.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Logo Modal -->
+<div id="logo-modal" class="modal-overlay hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4">
+    <img src="Logo.png" alt="CodeCircuit Logo Large" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-2xl shadow-cyan-500/50">
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-900/50 text-white py-8 px-4 mt-12 rounded-t-lg border-t border-gray-700">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+            <h4 class="text-2xl font-orbitron font-bold mb-2">Code<span class="text-cyan-400">Circuit</span></h4>
+            <p class="text-gray-400">Reach out for more information!</p>
+        </div>
+        <div class="space-y-3">
+            <p class="text-lg">
+                <span class="font-semibold">WhatsApp:</span> <a href="https://wa.me/27847865336" class="text-cyan-400 hover:underline">084 786 5336</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Email:</span> <a href="mailto:mehtar.imraan@gmail.com" class="text-cyan-400 hover:underline">mehtar.imraan@gmail.com</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/_codecircuit_/" target="_blank" class="text-cyan-400 hover:underline">@_codecircuit_</a>
+            </p>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-800">
+        &copy; 2025 CodeCircuit. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    // Navigation for the software page
+    const pages = document.querySelectorAll('.page');
+    const navBtns = document.querySelectorAll('.nav-btn');
+
+    function showPage(targetId) {
+        pages.forEach(page => {
+            page.style.display = page.id === targetId ? 'block' : 'none';
+        });
+        navBtns.forEach(btn => {
+            if (btn.dataset.target === targetId) {
+                btn.classList.add('active-nav');
+            } else {
+                btn.classList.remove('active-nav');
+            }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navBtns.forEach(btn => {
+        if (btn.dataset.target) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(btn.dataset.target);
+            });
+        }
+    });
+
+    // Show the Microsoft page by default on the software page
+    showPage('microsoft-page');
+
+    // --- Data for Apps ---
+    const msAppsData = {
+        word: { name: "Microsoft Word", logo: "Word.png", description: "A program used for typing and creating professional documents.", features:["Write letters, resumes, reports, and essays","Add pictures, tables, and designs","Correct spelling and grammar automatically"], shape: "rounded-full" },
+        excel: { name: "Microsoft Excel", logo: "Excel.png", description: "A spreadsheet program used to organize numbers and data.", features:["Create budgets, invoices, and reports","Perform automatic calculations","Use charts to visualize data"], shape: "rounded-full" },
+        powerpoint: { name: "Microsoft PowerPoint", logo: "Powerpoint.png", description: "Helps you make impactful slideshow presentations.", features:["Create professional slideshows","Add transitions and effects","Use pre-made templates"], shape: "rounded-full" },
+        access: { name: "Microsoft Access", logo: "Access.png", description: "Used to build and manage complex databases.", features:["Store and organize large amounts of data","Search and filter information easily","Create custom forms and reports"], shape: "rounded-full" },
+        outlook: { name: "Microsoft Outlook", logo: "Outlook.png", description: "An email and calendar app to manage communication.", features:["Send and receive emails","Schedule appointments and meetings","Manage contacts and tasks"], shape: "rounded-full" }
+    };
+
+    const adobeAppsData = {
+        photoshop: { name:"Adobe Photoshop", logo:"Photoshop.png", description:"Turn any photo into a masterpiece.", features:["Fix, transform, and enhance images","Retouch portraits & remove backgrounds","Design stunning digital art"], shape: "rounded-2xl" },
+        illustrator: { name:"Adobe Illustrator", logo:"Ai.png", description:"Design vector art that stays crystal clear at any size.", features:["Design logos, icons, and infographics","Precise drawing tools for professional artwork","Ideal for branding, print, and web"], shape: "rounded-2xl" },
+        aftereffects: { name:"Adobe After Effects", logo:"Ae.png", description:"If you can imagine it moving, After Effects can make it happen.", features:["Create cinematic animations and motion graphics","Design dynamic text and transitions","Produce visual effects for social media and film"], shape: "rounded-2xl" },
+        premiere: { name:"Adobe Premiere Pro", logo:"Premiere Pro.png", description:"From raw clips to wow moments — bring your story to life.", features:["Cut, arrange, and refine video footage","Adjust colors and audio professionally","Add transitions and effects"], shape: "rounded-2xl" },
+        indesign: { name:"Adobe InDesign", logo:"Id.png", description:"Your words deserve a beautiful home — InDesign builds it.", features:["Design magazines, brochures, and books","Utilize powerful typography tools","Export print-ready or digital formats"], shape: "rounded-2xl" }
+    };
+    
+    // --- Function to create App Grids and Details ---
+    function setupAppPage(pagePrefix, appData) {
+        const detailContainer = document.getElementById(`${pagePrefix}-detail-container`);
+        const detailContent = document.getElementById(`${pagePrefix}-detail-content`);
+        const backBtn = document.getElementById(`${pagePrefix}-back-btn`);
+        const appKeys = Object.keys(appData);
+
+        const createCard = (app, isBottomRow = false) => {
+            const card = document.createElement('div');
+            let classList = "app-card tech-card p-6 rounded-xl flex flex-col items-center text-center cursor-pointer";
+            if (isBottomRow) {
+                classList += " w-full md:w-auto lg:w-[32%]"; 
+            }
+            card.className = classList;
+            card.innerHTML = `<img src="${app.logo}" alt="${app.name}" class="w-24 h-24 mb-4 ${app.shape}"><h3 class="text-2xl font-bold text-white">${app.name}</h3>`;
+            
+            card.addEventListener('click', () => {
+                const gridContainer = document.getElementById(`${pagePrefix}-container`);
+                if (gridContainer) gridContainer.style.display = 'none';
+                detailContainer.style.display = 'block';
+                detailContent.innerHTML = `<img src="${app.logo}" alt="${app.name} Logo" class="w-32 h-32 mb-6 ${app.shape}">
+                    <h2 class="text-4xl font-extrabold font-orbitron text-cyan-400 mb-4">${app.name}</h2>
+                    <p class="text-lg leading-relaxed text-gray-400 mb-8 max-w-3xl text-center">${app.description}</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Key Features:</h3>
+                    <ul class="list-disc list-inside text-left text-gray-300 space-y-2 text-lg max-w-2xl">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+            });
+            return card;
+        };
+
+        const backHandler = () => {
+            const gridContainer = document.getElementById(`${pagePrefix}-container`);
+            detailContainer.style.display = 'none';
+            if (gridContainer) gridContainer.style.display = 'block';
+        };
+
+        const gridTop = document.getElementById(`${pagePrefix}-grid-top`);
+        const gridBottom = document.getElementById(`${pagePrefix}-grid-bottom`);
+        if (appKeys.length === 5 && gridTop && gridBottom) {
+            appKeys.slice(0, 3).forEach(key => gridTop.appendChild(createCard(appData[key])));
+            appKeys.slice(3).forEach(key => gridBottom.appendChild(createCard(appData[key], true)));
+        }
+        
+        if (backBtn) {
+            backBtn.addEventListener('click', backHandler);
+        }
+    }
+
+    // Initialize the app pages
+    setupAppPage('ms', msAppsData);
+    setupAppPage('adobe', adobeAppsData);
+
+    // Trend Collapsible Sections
+    const trendBtns = document.querySelectorAll('.trend-toggle');
+    trendBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            document.querySelectorAll('.collapsible-content').forEach(c => {
+                if (c !== content) c.style.display = 'none';
+            });
+            content.style.display = isVisible ? 'none' : 'block';
+        });
+    });
+
+    // Logo Modal Logic
+    const navLogo = document.getElementById('nav-logo');
+    const logoModal = document.getElementById('logo-modal');
+
+    if (navLogo && logoModal) {
+        navLogo.addEventListener('click', () => {
+            logoModal.classList.remove('hidden');
+        });
+
+        logoModal.addEventListener('click', (e) => {
+            if (e.target === logoModal) {
+                logoModal.classList.add('hidden');
+            }
+        });
+    }
+</script>
+</body>
+</html>
